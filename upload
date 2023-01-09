@@ -1,0 +1,26 @@
+#!/bin/bash
+
+for file in $(jq --raw-output '.entrypoints[]' build/asset-manifest.json); do
+
+  if [[ $file =~ static/js/main.*.js ]]
+  then
+      az storage blob upload \
+      --file "build/$file" \
+      --container-name "alpha/fint-kontroll-appbar-pod" \
+      --account-name stflaiscdn \
+      --name main.js \
+      --overwrite
+  fi
+
+  if [[ $file =~ static/css/main.*.css ]]
+  then
+        az storage blob upload \
+          --file "build/$file" \
+          --container-name "alpha/fint-kontroll-appbar-pod" \
+          --account-name stflaiscdn \
+          --name main.css \
+          --overwrite
+  fi
+
+done
+           ##--content-cache-control max-age=10 \

@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import Main from "./features/main/Main";
 import {createTheme, ThemeProvider} from "@mui/material";
 

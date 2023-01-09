@@ -1,0 +1,14 @@
+{
+  "name": "fint-kontroll-appbar-pod",
+  "version": "1.0.0",
+  "main": "podlet.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node podlet.js"
+  },
+  "dependencies": {
+    "@fintlabs/fint-podium-react-podlet": "^1.0.6",
+    "@podium/podlet": "^4.4.68",
+    "express": "^4.18.2"
+  }
+}
